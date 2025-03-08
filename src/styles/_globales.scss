@@ -1,0 +1,18 @@
+@use '../../src/styles/values';
+@use '../../src/styles/colors';
+
+html,
+body {
+  //height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: colors.$brownLight;
+  font-family: values.$fontText;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

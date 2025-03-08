@@ -1,0 +1,25 @@
+@use"../../styles/colors";
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: colors.$terracotta;
+    width: 100%;
+    color:colors.$white;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: colors.$terracotta;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
