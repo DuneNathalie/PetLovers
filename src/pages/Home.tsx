@@ -23,20 +23,18 @@ const Home: React.FC = () => {
 
 
     return (
-        <div className={Styles.container}>
-            <div className={Styles.sidebar}>
-                <div className={Styles.bar}>
-                    <SideBar />
-                </div>
-                <div className={Styles.content}>
-                    <h1>Bienvenue sur PetLovers</h1>
-                    <div >
-                        <ListCard />
-                    </div>
-                    <Footer />
-                </div>
-            </div>
+     <div className={Styles.container}>
+    <div className={Styles.contant}>
+        <div className={Styles.bar}>
+            <SideBar />
         </div>
+        <div className={Styles.mainContent}>
+            <h2>Bienvenue sur PetLovers</h2>
+            <ListCard />
+        </div>
+    </div>
+    <Footer />
+</div>
     )
 };
 export default Home;

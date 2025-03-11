@@ -7,15 +7,15 @@ import SideBar from '../components/SideBar/SideBar';
 const AddAdoption: React.FC = () => {
     return (
         <div className={Styles.container}>
-            <div className={Styles.sidebar}>
+            <div className={Styles.contant}>
                 <div className={Styles.bar}>
                     <SideBar />
                 </div>
-                <div className={Styles.content}>
-                    <h1>Ajout</h1>
-                    <Footer />
+                <div  >
+                    <h1>Ajoute un animal</h1>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 };
