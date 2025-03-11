@@ -13,7 +13,6 @@ const Favoris: React.FC = () => {
             </div>
             <div  >
                 <h1>Favoris</h1>
-              
             </div>
         </div>
         <Footer />
