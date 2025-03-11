@@ -1,32 +1,30 @@
 @use"../styles/colors";
 @use"../styles/values";
 
-.container{
+.container {
   font-family: values.$fontTitle;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: colors.$white;
+  min-height: 100vh;
 
-  .sidebar{
+  .contant {
     display: flex;
-
-    .bar{
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      background-color: colors.$vert;
-    }
-    .content{
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      color: colors.$white;
+    flex:1;
+    .bar {
+      background-color: colors.$brownLight;
     }
   }
 }
 
-@media screen and (max-width: 700px) {
 
+@media screen and (max-width: 700px) {
+  .contant {
+    flex-direction: column;
+    // background-color: red;
+    margin-top: 1.6rem;
+    width: 100%;
+  }
 }

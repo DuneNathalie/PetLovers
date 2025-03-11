@@ -3,6 +3,14 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    background-color: aqua;
     padding: 10px;
+    overflow-x: hidden;
 }
+
+
+
+@media screen and (max-width: 700px) {
+    .container{
+        max-height: none;
+    }
+  }

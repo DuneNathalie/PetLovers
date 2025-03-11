@@ -1,11 +1,121 @@
-.container {
-    width: 300px;
+@use'../../styles/colors';
+@use'../../styles/values';
+
+nav {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    width: 300px;
 
-    img{
+    .menu {
+        position: absolute;
+        display: none;
+        top: 0.75rem;
+        right: 0.5rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25rem;
+        height: 1.6rem;
+
+        span {
+            height: 0.1rem;
+            width: 100%;
+            background-color: colors.$violet;
+            border-radius: 0.2rem;
+        }
+    }
+
+
+    img {
         width: 300px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        list-style: none;
+
+        li {
+            list-style: none;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: colors.$greenOlive;
+            display: block;
+            padding: 0.5rem;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+            font-family: values.$fontTitle;
+
+            &:hover {
+                background-color: colors.$greenOlive;
+                color: colors.$white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        border-bottom: none;
+
+        img {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        ul {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 0.25rem;
+            opacity: 0.9;
+            position: absolute;
+            top: 28px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 250px;
+
+            &.open {
+                z-index: 100;
+                display: flex;
+                justify-content: center;
+                background-color: colors.$roseClaire;
+
+            }
+            
+            li {
+                width: 100%;
+                text-align: center;
+                
+                a {
+                    color:colors.$violet;
+                    margin: 0.2rem 0.5rem;
+                    text-transform: uppercase;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        background-color: none;
+                    }
+
+                }
+            }
+        }
     }
 }
