@@ -1,0 +1,11 @@
+.container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img{
+        width: 300px;
+    }
+}

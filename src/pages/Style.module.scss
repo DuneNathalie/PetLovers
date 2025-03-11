@@ -3,15 +3,28 @@
 
 .container{
   font-family: values.$fontTitle;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: colors.$white;
 
- 
+  .sidebar{
+    display: flex;
+
+    .bar{
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background-color: colors.$vert;
+    }
+    .content{
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: colors.$white;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {

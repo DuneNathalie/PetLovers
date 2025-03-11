@@ -1,0 +1,31 @@
+@use"../../../styles/colors";
+
+.container {
+    background-color: colors.$brownLight;
+    padding: 0 20px 20px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+    img {
+        border-radius: 50%;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    button {
+        background-color: colors.$greenOlive;
+        color: colors.$white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: solid 1px colors.$greenOlive;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: colors.$brownLight;
+            color: colors.$greenOlive;
+            border: solid 1px colors.$greenOlive;
+        }
+    }
+}
