@@ -8,6 +8,11 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     max-width: 300px;
 
+    h2{
+        color:colors.$white;
+        padding-top:20px;
+    }
+
     img {
         border-radius: 50%;
         box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);
@@ -22,7 +27,7 @@
         border-radius: 5px;
         border: solid 1px colors.$greenOlive;
         cursor: pointer;
-        margin-top: 10px;
+        margin-top: 20px;
 
         &:hover {
             background-color: colors.$brownLight;

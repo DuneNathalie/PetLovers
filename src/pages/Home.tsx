@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             .catch((err) => {
                 console.error(err);
             });
-    }, []); // Ce useEffect charge les animaux **une seule fois** au montage
+    }, []); 
 
     const filteredAnimaux = selectedCategory === "Nos PetLovers"
         ? cardAnimaux

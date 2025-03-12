@@ -2,7 +2,6 @@ import React from 'react';
 import Styles from './Footer.module.scss';
 
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { IconBaseProps } from 'react-icons';
 
 const Footer: React.FC = () => {
     return (
