@@ -26,9 +26,7 @@ const Description: React.FC = () => {
         <div className={Styles.bar}>
           <SideBar />
         </div>
-        <div>
-          <h1>Descriptif</h1>
-          <div>
+        <div className={Styles.mainContentDescription}>
             <Pet
               name={selectedAnimal.name}
               sexe={selectedAnimal.sexe}
@@ -37,7 +35,6 @@ const Description: React.FC = () => {
               descriptif={selectedAnimal.descriptif}
               onClick={handleAdopter}
             />
-          </div>
         </div>
       </div>
       <Footer />

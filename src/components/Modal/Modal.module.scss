@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   width: 500px;
-  height: 400px;
+  height: 300px;
   z-index: 100;
   background-color: colors.$white;
   border-radius: 10px;
@@ -19,15 +19,18 @@
   box-shadow: 0 0 10px 0 rgba(240, 145, 202, 0.3);
   border: solid 1px colors.$greenOlive;
   color:colors.$violet;
+  padding: 20px;
 
   img{
     width: 200px;
   }
 
   .contant{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
       p {
           font-family: values.$fontTitle;
           // font-size: values.$font_size_2p;
@@ -40,7 +43,7 @@
             border-radius: 5px;
             border: solid 1px colors.$violet;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 20px auto;
             
             &:hover {
                 background-color: colors.$white;
@@ -57,10 +60,16 @@
     max-width: 330px;
     height: 230px;
     text-align: center;
-    
-    p {
-
-      padding: 10px;
+    padding: 0;
+    .contant{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      p {
+        
+        padding: 10px;
+      }
     }
   }
 }

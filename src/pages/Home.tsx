@@ -37,9 +37,7 @@ const Home: React.FC = () => {
                     <SideBar />
                 </div>
                 <div className={Styles.mainContent}>
-                    <h2>Bienvenue sur PetLovers</h2>
                     <SearchBar onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
-
                     <ListCard animaux={filteredAnimaux} />
                 </div>
             </div>

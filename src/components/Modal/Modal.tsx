@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useModal } from '../../context/modal';
 
 import Styles from './Modal.module.scss';
-import Pet from "../../assets/Pet.png";
+import Pet from "../../assets/logo.png";
 
 interface ModalProps {
     text: string;
@@ -25,7 +25,7 @@ const Modal: React.FC<ModalProps> = ({ text }) => {
                 <button
                     onClick={() => {
                         hideModal();
-                        navigate('/'); // Navigue vers la page d'accueil ou autre selon le besoin
+                        navigate('/');
                     }}
                 >
                     Fermer
