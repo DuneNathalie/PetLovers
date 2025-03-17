@@ -3,17 +3,17 @@ import React from 'react';
 import Styles from './Card.module.scss';
 
 interface AnimalProps {
+    id: number;
     name: string;
     image: string;
-    age: string;
+    onClick: () => void;
 };
-const Card: React.FC<AnimalProps> = ({name,image,age}) => {
+const Card: React.FC<AnimalProps> = ({id, name,image, onClick}) => {
     return (
         <div className={Styles.container}>
             <h2>{name}</h2>
             <img className="tete" src={image} alt="tete" />
-            <p>{age} ans</p>
-            <button>En savoir +</button>
+            <button onClick={onClick}>En savoir +</button>
             </div>
     )
 };

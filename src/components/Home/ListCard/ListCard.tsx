@@ -1,25 +1,36 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Styles from './ListCard.module.scss';
 import Card from '../Card/Card';
 
 interface Animal {
-    id: number;
+    id_animaux: number;
     name: string;
     type: string;
     image: string;
-    age: number;
 }
 
 interface ListCardProps {
-    animaux: Animal[]; 
+    animaux: Animal[];
 }
 
 const ListCard: React.FC<ListCardProps> = ({ animaux }) => {
+    const navigate = useNavigate();
+    console.log("animaux => ", animaux);
+    function handleDescription(animal: Animal) {
+        navigate(`/Description/${animal.id_animaux}`, { state: { animal } });
+    }
+
     return (
         <div className={Styles.container}>
-            {animaux.map((anim) => (
-                <div key={anim.id} className={Styles.cardAnim}>
-                    <Card name={anim.name} image={anim.image} age={anim.age.toString()} />
+            {animaux.map((anim, index) => (
+                <div key={index} className={Styles.cardAnim}>
+                    <Card
+                        name={anim.name}
+                        image={anim.image}
+                        id={anim.id_animaux}
+                        onClick={() => handleDescription(anim)} // Passe tout l'objet animal
+                    />
                 </div>
             ))}
         </div>

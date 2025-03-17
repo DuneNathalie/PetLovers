@@ -6,29 +6,45 @@ nav {
     flex-direction: column;
     align-items: center;
     width: 300px;
+    margin: 0;
+    height: 100%;
+  //  box-shadow: 4px 0px 6px -2px rgba(colors.$violet, 0.5);
+    background-color: colors.$roseClaire;
 
     .menu {
         position: absolute;
         display: none;
-        top: 0.75rem;
         right: 0.5rem;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 2.25rem;
-        height: 1.6rem;
+        justify-content: end;
+        align-items: center;
+        gap:10px;
+        width: 100%;
+        height: 50px;
 
-        span {
-            height: 0.1rem;
-            width: 100%;
-            background-color: colors.$violet;
-            border-radius: 0.2rem;
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+            background-color: colors.$roseClaire;
+            border-radius: 50%;
         }
     }
 
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-    img {
-        width: 300px;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 50%;
+            margin: 20px 0;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        }
     }
 
     ul {
@@ -37,7 +53,6 @@ nav {
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100%;
         padding: 0;
         list-style: none;
 
@@ -50,7 +65,7 @@ nav {
 
         a {
             text-decoration: none;
-            color: colors.$greenOlive;
+            color: colors.$violet;
             display: block;
             padding: 0.5rem;
             margin: 0 0.5rem;
@@ -58,7 +73,7 @@ nav {
             font-family: values.$fontTitle;
 
             &:hover {
-                background-color: colors.$greenOlive;
+                background-color: colors.$violet;
                 color: colors.$white;
             }
         }
@@ -68,10 +83,17 @@ nav {
 @media screen and (max-width: 700px) {
     nav {
         flex-direction: column;
-        border-bottom: none;
+        background-color: transparent;
 
-        img {
-            display: none;
+        .logo {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+            
+            img {
+                display: none;
+            }
         }
 
         .menu {
@@ -81,31 +103,34 @@ nav {
         ul {
             display: none;
             flex-direction: column;
-            justify-content: center;
+            justify-content: start;
             width: 100%;
-            margin-bottom: 0.25rem;
+          //  margin-bottom: 0.25rem;
             opacity: 0.9;
             position: absolute;
-            top: 28px;
+            top: 0;
             left: 0;
             right: 0;
             width: 100%;
             height: 250px;
+            
 
             &.open {
                 z-index: 100;
                 display: flex;
-                justify-content: center;
+                justify-content: start;
                 background-color: colors.$roseClaire;
+                box-shadow: 0px 4px 6px -2px rgba(colors.$violet, 0.5);
+            
 
             }
-            
+
             li {
                 width: 100%;
                 text-align: center;
-                
+
                 a {
-                    color:colors.$violet;
+                    color: colors.$violet;
                     margin: 0.2rem 0.5rem;
                     text-transform: uppercase;
                     font-size: 1.5rem;

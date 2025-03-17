@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             .catch((err) => {
                 console.error(err);
             });
-    }, []); // Ce useEffect charge les animaux **une seule fois** au montage
+    }, []); 
 
     const filteredAnimaux = selectedCategory === "Nos PetLovers"
         ? cardAnimaux
@@ -37,9 +37,7 @@ const Home: React.FC = () => {
                     <SideBar />
                 </div>
                 <div className={Styles.mainContent}>
-                    <h2>Bienvenue sur PetLovers</h2>
                     <SearchBar onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
-
                     <ListCard animaux={filteredAnimaux} />
                 </div>
             </div>

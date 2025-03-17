@@ -7,8 +7,10 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onCategoryChange, selectedCategory }) => {
+        const userName = localStorage.getItem('user');
     return (
         <div className={Styles.container}>
+            <h2>Bienvenue {userName} sur PetLovers</h2>
             <select onChange={(e) => onCategoryChange(e.target.value)} value={selectedCategory}>
                 <option value="Nos PetLovers">Nos PetLovers</option>
                 <option value="Chien">Chien</option>
