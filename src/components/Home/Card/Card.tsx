@@ -8,7 +8,8 @@ interface AnimalProps {
     image: string;
     onClick: () => void;
 };
-const Card: React.FC<AnimalProps> = ({id, name,image, onClick}) => {
+const Card: React.FC<AnimalProps> = ({name,image, onClick}) => {
+
     return (
         <div className={Styles.container}>
             <h2>{name}</h2>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import {useLocation } from 'react-router-dom';
 import Styles from './Style.module.scss';
 import Footer from '../components/Footer/Footer';
 import SideBar from '../components/SideBar/SideBar';
@@ -8,14 +8,14 @@ import { useModal } from '../context/modal';
 import Modal from '../components/Modal/Modal';
 
 const Description: React.FC = () => {
-  const { id } = useParams();
+
   const location = useLocation();
   const selectedAnimal = location.state?.animal;
   const { showModal } = useModal();
 
   const handleAdopter = () => {
-    console.log('Adopter');
-    showModal(<Modal text="Vous avez adopté l'animal!" show={true}/>);
+    showModal(<Modal text="Vous avez adopté l'animal!" show={true} id={selectedAnimal.id_animaux}/>);
+    console.log('Adopter et id => ', selectedAnimal.id_animaux);
   };
 
   if (!selectedAnimal) return <p>Animal non trouvé</p>;
