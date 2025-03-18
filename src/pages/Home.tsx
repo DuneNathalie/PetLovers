@@ -27,9 +27,6 @@ const Home: React.FC = () => {
             animal.type.trim().toLowerCase() === selectedCategory.trim().toLowerCase()
         );
 
-    console.log("Catégorie sélectionnée:", selectedCategory);
-    console.log("Animaux après filtrage:", filteredAnimaux);
-
     return (
         <div className={Styles.container}>
             <div className={Styles.contant}>

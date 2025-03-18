@@ -16,7 +16,7 @@ interface ListCardProps {
 
 const ListCard: React.FC<ListCardProps> = ({ animaux }) => {
     const navigate = useNavigate();
-    console.log("animaux => ", animaux);
+   // console.log("animaux => ", animaux);
     function handleDescription(animal: Animal) {
         navigate(`/Description/${animal.id_animaux}`, { state: { animal } });
     }
