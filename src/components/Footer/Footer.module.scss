@@ -9,12 +9,13 @@
     background-color: colors.$greenOlive;
     width: 100%;
     color:colors.$white;
+    gap:10px;
 
     .social {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap:15px;
+        gap:5px;
 
         a {
             text-decoration: none;
@@ -43,6 +44,7 @@
         width: 100%;
         text-align: center;
         padding: 10px;
+        gap:0px;
 
         p{
             margin: 0;
