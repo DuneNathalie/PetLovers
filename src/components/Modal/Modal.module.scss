@@ -15,43 +15,43 @@
   z-index: 100;
   background-color: colors.$white;
   border-radius: 10px;
- // padding: 10px;
   box-shadow: 0 0 10px 0 rgba(240, 145, 202, 0.3);
   border: solid 1px colors.$greenOlive;
-  color:colors.$violet;
+  color: colors.$violet;
   padding: 20px;
 
-  img{
+  img {
     width: 200px;
   }
 
-  .contant{
+  .contant {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-      p {
-          font-family: values.$fontTitle;
-          // font-size: values.$font_size_2p;
-        }
-        button {
-            background-color: colors.$violet;
-            color: colors.$white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: solid 1px colors.$violet;
-            cursor: pointer;
-            margin-top: 20px auto;
-            
-            &:hover {
-                background-color: colors.$white;
-                color: colors.$violet;
-                border: solid 1px colors.$violet;
-            }
+
+    p {
+      font-family: values.$fontTitle;
     }
-}
+
+    button {
+      background-color: colors.$violet;
+      color: colors.$white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: solid 1px colors.$violet;
+      cursor: pointer;
+      margin-top: 20px auto;
+
+      &:hover {
+        background-color: colors.$white;
+        color: colors.$violet;
+        border: solid 1px colors.$violet;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -60,18 +60,18 @@
     height: 230px;
     text-align: center;
     padding: 0;
-    left: 50%; 
-    top: 50%; 
+    left: 50%;
+    top: 50%;
     padding: 0;
 
-    .contant{
+    .contant {
       margin: auto;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
+
       p {
-        
+
         padding: 10px;
       }
     }
