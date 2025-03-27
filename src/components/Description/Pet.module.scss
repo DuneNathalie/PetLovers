@@ -47,6 +47,26 @@
             overflow: hidden;
             justify-content: space-between;
 
+            .favoris {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .containerHeart {
+                 width: 20px;
+                 height: 20px;
+                 background-color: colors.$black;
+                 border-radius: 50%;
+                 &:hover {
+                     background-color: colors.$red;
+                 }
+                }
+                .heart {
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+
             .buttonAdd {
                 display: flex;
                 justify-content: center;
