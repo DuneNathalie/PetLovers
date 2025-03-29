@@ -4,6 +4,8 @@ import Styles from './Style.module.scss';
 import Footer from '../components/Footer/Footer';
 import SideBar from '../components/SideBar/SideBar';
 
+import FormUpdate from '../components/AddAdoption/FormUpdate/FormUpdate';
+
 const AddAdoption: React.FC = () => {
     return (
         <div className={Styles.container}>
@@ -11,8 +13,10 @@ const AddAdoption: React.FC = () => {
                 <div className={Styles.bar}>
                     <SideBar />
                 </div>
-                <div  >
-                    <h1>Ajoute un animal</h1>
+
+                <div className={Styles.mainContent}>
+                    <h1>Ajoute un animal à l'adoption</h1>
+                    <FormUpdate />
                 </div>
             </div>
             <Footer />
