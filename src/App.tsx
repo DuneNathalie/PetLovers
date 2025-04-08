@@ -14,7 +14,7 @@ const App: React.FC = () => {
         <ModalProvider>
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/Login' element={<Login />} />
+                <Route path='/login' element={<Login />} />
                 <Route path='/favoris' element={<Favoris />} />
                 <Route path='/Description/:id' element={<Description />} />
                 <Route path='/AddAdoption' element={<AddAdoption />} />
