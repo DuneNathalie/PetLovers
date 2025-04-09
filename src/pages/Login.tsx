@@ -1,6 +1,7 @@
 import React from 'react';
 import Styles from './Style.module.scss';
 import Footer from '../components/Footer/Footer';
+import LoginConnect from '../components/Login/Login';
 
 const Login: React.FC = () => {
   return (
@@ -15,8 +16,8 @@ const Login: React.FC = () => {
             <source src="/video/video.mp4" type="video/mp4" />
           </video>
         </div>
-        <div>
-          <h1>Login</h1>
+        <div className={Styles.login}>
+          <LoginConnect/>
         </div>
       </div>
       <Footer />

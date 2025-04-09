@@ -23,13 +23,16 @@ const SideBar: React.FC = () => {
                 <img src={Logo} alt="logo" />
             </div>
                 <li>
-                    <NavLink to='/'>Acceuil</NavLink>
+                    <NavLink to='/home'>Acceuil</NavLink>
                 </li>
                 <li>
                     <NavLink to='/addAdoption'>Ajoute un animal à l'adoption</NavLink>
                 </li>
                 <li>
                     <NavLink to='/favoris'>Tes Favoris</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/'>Déconnexion</NavLink>
                 </li>
             </ul>
         </nav>

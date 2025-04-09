@@ -13,8 +13,8 @@ const App: React.FC = () => {
 
         <ModalProvider>
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/login' element={<Login />} />
+                <Route path='/' element={<Login />} />
+                <Route path='/home' element={<Home />} />
                 <Route path='/favoris' element={<Favoris />} />
                 <Route path='/Description/:id' element={<Description />} />
                 <Route path='/AddAdoption' element={<AddAdoption />} />
