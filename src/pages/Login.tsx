@@ -8,16 +8,19 @@ const Login: React.FC = () => {
     <div className={Styles.container}>
       <div className={Styles.contant}>
         <div className={Styles.player}>
-          <video 
-            controls 
-            width="100%" 
-            style={{ maxHeight: '95vh' }} 
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            width="100%"
+            style={{ maxHeight: '95vh' }}
           >
             <source src="/video/video.mp4" type="video/mp4" />
           </video>
         </div>
         <div className={Styles.login}>
-          <LoginConnect/>
+          <LoginConnect />
         </div>
       </div>
       <Footer />

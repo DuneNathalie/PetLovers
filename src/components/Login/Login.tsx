@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Styles from './Login.module.scss';
 
-import { NavLink, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
+
 
 const Connection: React.FC = () => {
 
@@ -19,29 +20,71 @@ const Connection: React.FC = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+    
         if (isRegistering) {
             if (formData.password !== formData.confirmPassword) {
-                setErrorMessage("Les mots de passe ne correspondent pas.");
+                alert("Les mots de passe ne correspondent pas.");
                 return;
             }
-
-            setErrorMessage("");
-            console.log("Inscription réussie !");
+    
+            try {
+                const response = await fetch(`http://localhost:5000/register`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: formData.user,
+                        password: formData.password
+                    })
+                });
+    
+                const data = await response.json();
+                if (response.ok) {
+                    console.log("Inscription réussie !");
+                    setErrorMessage("");
+                    setIsRegistering(false); 
+                } else {
+                    console.log("Erreur lors de l'inscription :", data.message);
+                    alert(data.message || "Erreur lors de l'inscription");
+                }
+            } catch (error) {
+                console.error("Erreur lors de l'envoi de la requête :", error);
+            }
         } else {
-            if (formData.user === 'nathy' && formData.password === 'nathy1234') {
-                console.log("Connexion réussie !");
-                console.log("Reussi! user ", formData.user, "password ", formData.password);
-                navigate('/home');
-
-            } else {
-                setErrorMessage("Identifiants incorrects.");
-                console.log("echec! user ", formData.user, "password ", formData.password);
-                setFormData({ ...formData, password: "", user: "" });
+            try {
+                const response = await fetch(`http://localhost:5000/login`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: formData.user,
+                        password: formData.password
+                    })
+                });
+    
+                const data = await response.json();
+                console.log('data =>', data);
+    
+                if (response.ok) {
+                    console.log("Connexion réussie !");
+                    navigate('/home');
+                } else {
+                    alert("Identifiants incorrects !");
+                    setFormData({ ...formData, password: "", user: "" });
+                }
+            } catch (error) {
+                console.error("Erreur lors de la requête :", error);
+                setErrorMessage("Erreur serveur ou réseau.");
             }
         }
     };
+    
+    
+    
 
     const sharedFields = (
         <>
