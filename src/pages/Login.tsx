@@ -4,6 +4,9 @@ import Footer from '../components/Footer/Footer';
 import LoginConnect from '../components/Login/Login';
 
 const Login: React.FC = () => {
+
+  localStorage.clear();
+  
   return (
     <div className={Styles.container}>
       <div className={Styles.contant}>
