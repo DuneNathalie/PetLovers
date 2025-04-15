@@ -51,7 +51,7 @@ const Modal: React.FC<ModalProps> = ({ text, id }) => {
                     onClick={() => {
                         deleteAnimaux(id);
                         hideModal();
-                        navigate('/');
+                        navigate('/home');
                     }}
                 >
                     Fermer

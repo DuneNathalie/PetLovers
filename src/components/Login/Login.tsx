@@ -12,7 +12,7 @@ const Connection: React.FC = () => {
         password: "",
         confirmPassword: "",
     });
-    const [errorMessage, setErrorMessage] = useState<string>("");
+  //  const [errorMessage, setErrorMessage] = useState<string>("");
 
     const navigate = useNavigate();
 
@@ -40,11 +40,11 @@ const Connection: React.FC = () => {
                         password: formData.password
                     })
                 });
-    
+                console.log("data entrée dans form ", formData.user, formData.password);
                 const data = await response.json();
+
                 if (response.ok) {
                     console.log("Inscription réussie !");
-                    setErrorMessage("");
                     setIsRegistering(false); 
                 } else {
                     console.log("Erreur lors de l'inscription :", data.message);
@@ -67,10 +67,13 @@ const Connection: React.FC = () => {
                 });
     
                 const data = await response.json();
-                console.log('data =>', data);
+                console.log("data entrée dans form ", formData.user, formData.password);
     
                 if (response.ok) {
                     console.log("Connexion réussie !");
+                    localStorage.setItem('user', formData.user);
+                    const userName = localStorage.getItem('user');
+                    console.log("userName Stocké => ", userName);
                     navigate('/home');
                 } else {
                     alert("Identifiants incorrects !");
@@ -78,7 +81,7 @@ const Connection: React.FC = () => {
                 }
             } catch (error) {
                 console.error("Erreur lors de la requête :", error);
-                setErrorMessage("Erreur serveur ou réseau.");
+               // setErrorMessage("Erreur serveur ou réseau.");
             }
         }
     };
@@ -127,7 +130,7 @@ const Connection: React.FC = () => {
                 <button type="submit">
                     {isRegistering ? 'Valide ton inscription' : 'Valide'}
                 </button>
-                {errorMessage && <p className={Styles.errorMessage}>{errorMessage}</p>}
+    
             </form>
             <p className={Styles.text}>
                 {isRegistering ? (

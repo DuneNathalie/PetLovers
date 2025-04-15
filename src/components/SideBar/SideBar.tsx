@@ -7,7 +7,7 @@ import Logo from '../../assets/logo.png';
 const SideBar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const userName = localStorage.getItem('user');
-    const newUser = localStorage.setItem('user', 'Nathy');
+  //  const newUser = localStorage.setItem('user', 'Nathy');
     console.log("userName => ", userName);
 
     console.log(menuOpen);
