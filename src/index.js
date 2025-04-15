@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import './styles/_globales.scss'; // Importez vos styles globaux ici
+import './styles/_globales.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

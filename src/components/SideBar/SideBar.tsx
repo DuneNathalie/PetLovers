@@ -26,10 +26,10 @@ const SideBar: React.FC = () => {
                     <NavLink to='/home'>Acceuil</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/addAdoption'>Ajoute un animal à l'adoption</NavLink>
+                    <NavLink to='/favoris'>Tes Favoris</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/favoris'>Tes Favoris</NavLink>
+                    <NavLink to='/addAdoption'>Ajoute un animal à l'adoption</NavLink>
                 </li>
                 <li>
                     <NavLink to='/'>Déconnexion</NavLink>

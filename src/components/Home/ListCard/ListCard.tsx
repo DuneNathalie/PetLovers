@@ -29,7 +29,7 @@ const ListCard: React.FC<ListCardProps> = ({ animaux }) => {
                         name={anim.name}
                         image={anim.image}
                         id={anim.id_animaux}
-                        onClick={() => handleDescription(anim)} // Passe tout l'objet animal
+                        onClick={() => handleDescription(anim)}
                     />
                 </div>
             ))}
