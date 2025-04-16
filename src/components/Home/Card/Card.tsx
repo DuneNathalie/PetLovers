@@ -33,19 +33,21 @@ const Card: React.FC<AnimalProps> = ({ id, name, image, onClick }) => {
     }
 
     localStorage.setItem('animal_ids', JSON.stringify(updated));
-    const list=localStorage.getItem('animal_ids');
+    const list = localStorage.getItem('animal_ids');
     console.log("list => ", list);
     setLiked(!liked);
   };
 
   return (
     <div className={Styles.container}>
-      <FaHeart
-        onClick={toggleHeart}
-        size={15}
-        color={liked ? "red" : "gray"}
-        style={{ cursor: "pointer", transition: "color 0.3s ease" }}
-      />
+      <div className={Styles.containerIcon}>
+        <FaHeart
+          onClick={toggleHeart}
+          size={15}
+          color={liked ? "red" : "gray"}
+          className={Styles.icon}
+        />
+      </div>
       <h2>{name}</h2>
       <img className="tete" src={image} alt="tete" />
       <button onClick={onClick}>En savoir +</button>
