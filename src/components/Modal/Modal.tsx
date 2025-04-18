@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useModal } from '../../context/modal';
 
@@ -9,57 +9,77 @@ interface ModalProps {
     text: string;
     show: boolean;
     id?: number;
+    type: "delete" | "update";
 }
 
-const Modal: React.FC<ModalProps> = ({ text, id }) => {
+const Modal: React.FC<ModalProps> = ({ text, id, type }) => {
     const { hideModal, isVisible } = useModal();
     const navigate = useNavigate();
     const [delAnimaux, setDelAnimaux] = useState<{ id: number }[]>([]);
 
+    useEffect(() => {
+        if (type === 'update' && isVisible) {
+            const timer = setTimeout(() => {
+                hideModal();
+                navigate('/home');
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [type, isVisible, hideModal, navigate]);
+
     if (!isVisible) return null;
-    
-    const deleteAnimaux = (id) => {
-        console.log("ID envoyé dans la requête DELETE:", id);
+
+    const deleteAnimaux = (id: number | undefined) => {
+        if (!id) return;
+
         fetch(`http://localhost:5000/animaux/${id}`, {
             method: "DELETE",
         })
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error("Erreur lors de la suppression");
-            }
-            return res.json();
-        })
-        .then((data) => {
-            console.log(data.message);
-            setDelAnimaux((prev) => prev.filter(animal => animal.id !== id));
-            console.log('Animal supprimé avec succès');
-        })
-        .catch((err) => {
-            console.error(err);
-        });
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error("Erreur lors de la suppression");
+                }
+                return res.json();
+            })
+            .then((data) => {
+                console.log(data.message);
+                setDelAnimaux((prev) => prev.filter(animal => animal.id !== id));
+            })
+            .catch((err) => {
+                console.error(err);
+            });
     };
-    
-    
-    
-    
+
     return (
-        <div className={Styles.container}>
-                <img src={Pet} alt="pet" />
-            <div className={Styles.contant}>
-                <p>{text}</p>
-                <button
-                    onClick={() => {
-                        deleteAnimaux(id);
-                        hideModal();
-                        navigate('/home');
-                    }}
-                >
-                    Fermer
-                </button>
-            </div>
-        </div>
+        <>
+            {type === "update" && (
+                <div className={Styles.container}>
+                    <img src={Pet} alt="pet" />
+                    <div className={Styles.contant}>
+                        <p>{text}</p>
+                    </div>
+                </div>
+            )}
+
+            {type === "delete" && (
+                <div className={Styles.container}>
+                    <img src={Pet} alt="pet" />
+                    <div className={Styles.contant}>
+                        <p>{text}</p>
+                        <button
+                            onClick={() => {
+                                deleteAnimaux(id);
+                                hideModal();
+                                navigate('/home');
+                            }}
+                        >
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
-
 
 export default Modal;

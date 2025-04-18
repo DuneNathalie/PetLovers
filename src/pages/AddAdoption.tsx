@@ -15,7 +15,7 @@ const AddAdoption: React.FC = () => {
                 </div>
 
                 <div className={Styles.mainContent}>
-                    <h1>Ajoute un animal à l'adoption</h1>
+                    <h2>Ajoute un animal à l'adoption</h2>
                     <FormUpdate />
                 </div>
             </div>
