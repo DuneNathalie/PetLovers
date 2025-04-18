@@ -14,7 +14,7 @@ const Description: React.FC = () => {
   const { showModal } = useModal();
 
   const handleAdopter = () => {
-    showModal(<Modal text="Vous avez adopté l'animal!" show={true} id={selectedAnimal.id_animaux}/>);
+    showModal(<Modal type="delete" text="Vous avez adopté l'animal!" show={true} id={selectedAnimal.id_animaux}/>);
     console.log('Adopter et id => ', selectedAnimal.id_animaux);
   };
 

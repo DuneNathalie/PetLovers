@@ -20,16 +20,24 @@
     width: 100%;
     flex: 1;
 
-    .login{
-      margin:auto;
-  
+    .login {
+      margin: auto;
+
     }
 
     .mainContent {
       width: 100%;
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+      }
     }
 
-    .mainContentDescription{
+    .mainContentDescription {
       width: 100%;
     }
   }
@@ -41,8 +49,8 @@
     flex-direction: column;
     margin-top: 10px;
     width: 100%;
-    
-    .mainContentDescription{
+
+    .mainContentDescription {
       width: 100%;
       display: flex;
       justify-content: center;
