@@ -1,7 +1,7 @@
 {
   "name": "petlovers",
   "version": "1.0.0",
-  "description": "",
+  "description": "PetLovers est une application permettant de découvrir et de gérer des animaux fictifs à adopter. Les utilisateurs peuvent explorer une base de données d'animaux en appliquant des filtres par catégorie.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
