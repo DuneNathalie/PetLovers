@@ -22,6 +22,7 @@ const ListFavoris: React.FC<ListFavorisProps> = ({ animaux }) => {
 
     return (
         <div className={Styles.container}>
+              <h2>Tes Favoris</h2>
             {animaux.length > 0 ? (
                 animaux.map((anim) => (
                     <div key={anim.id_animaux} className={Styles.cardAnim}>
