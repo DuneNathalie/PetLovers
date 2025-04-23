@@ -36,7 +36,6 @@ const Favoris: React.FC = () => {
                     <SideBar />
                 </div>
                 <div className={Styles.mainContent}>
-                    <h2>Tes Favoris</h2>
                     <ListFavoris animaux={favAnimaux} />
                 </div>
             </div>

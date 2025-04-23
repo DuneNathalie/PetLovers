@@ -65,6 +65,8 @@ const FormUpdate: React.FC = () => {
     };
 
     return (
+        <div className={Styles.update}>
+            <h2>Ajoute ton animal</h2>
         <form className={Styles.container} onSubmit={handleSubmit}>
             <div className={Styles.containerForm}>
                 <div className={Styles.inputGroup}>
@@ -129,6 +131,7 @@ const FormUpdate: React.FC = () => {
                 </button>
             </div>
         </form>
+        </div>
     );
 };
 

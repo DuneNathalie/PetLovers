@@ -22,6 +22,8 @@ const ListFavoris: React.FC<ListFavorisProps> = ({ animaux }) => {
 
     return (
         <div className={Styles.container}>
+              <h2>Tes Favoris</h2>
+              <div className={Styles.containerCard}>
             {animaux.length > 0 ? (
                 animaux.map((anim) => (
                     <div key={anim.id_animaux} className={Styles.cardAnim}>
@@ -36,6 +38,7 @@ const ListFavoris: React.FC<ListFavorisProps> = ({ animaux }) => {
             ) : (
                 <p className={Styles.emptyText}>Aucun favori pour le moment.</p>
             )}
+        </div>
         </div>
     );
 };

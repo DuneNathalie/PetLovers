@@ -2,14 +2,15 @@
 
 .container {
     width: 500px;
-    margin: 0 auto;
+    height: 450px;
+    margin: auto;
     padding: 2rem;
     background-color: colors.$whiteDark;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+   // align-items: stretch;
     color:colors.$greenOlive;
     
     .form {
@@ -72,4 +73,34 @@ button[type="submit"]:hover {
 .linkButton:hover {
     color: colors.$greenDark;
 }
+}
+
+
+@media screen and (max-width: 570px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .form {
+        gap: 1rem;
+        
+        .inputGroup {
+            font-size: 1.2rem;
+            
+            .inputGroup label {
+                font-size: 1.2rem;
+            }
+        }
+        
+        button[type="submit"] {
+            font-size: 1.2rem;
+        }
+    }
+    
+    .text {
+        font-size: 0.9rem;
+    }
+    
 }
