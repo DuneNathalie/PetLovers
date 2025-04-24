@@ -49,7 +49,9 @@ const Card: React.FC<AnimalProps> = ({ id, name, image, onClick }) => {
         />
       </div>
       <h2>{name}</h2>
+      <div className={Styles.image}>
       <img className="tete" src={image} alt="tete" />
+      </div>
       <button onClick={onClick}>En savoir +</button>
     </div>
   );
