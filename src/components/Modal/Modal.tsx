@@ -32,7 +32,7 @@ const Modal: React.FC<ModalProps> = ({ text, id, type }) => {
     const deleteAnimaux = (id: number | undefined) => {
         if (!id) return;
 
-        fetch(`http://localhost:5000/animaux/${id}`, {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/animaux/${id}`, {
             method: "DELETE",
         })
             .then((res) => {

@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState("Nos PetLovers");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/animaux`)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/animaux`)
             .then((res) => res.json())
             .then((data) => {
                 setCardAnimaux(data);

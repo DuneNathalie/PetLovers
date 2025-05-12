@@ -4,12 +4,13 @@ import Footer from '../components/Footer/Footer';
 import SideBar from '../components/SideBar/SideBar';
 import ListFavoris from '../components/ListFavoris/ListFavoris';
 
+
 const Favoris: React.FC = () => {
     const [cardAnimaux, setCardAnimaux] = useState<any[]>([]); // Liste des animaux
     const [favAnimaux, setFavAnimaux] = useState<any[]>([]); // Liste des animaux favoris
 
     useEffect(() => {
-        fetch(`http://localhost:5000/animaux`)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/animaux`)
             .then((res) => res.json())
             .then((data) => {
                 setCardAnimaux(data); 
