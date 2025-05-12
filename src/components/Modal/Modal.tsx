@@ -12,6 +12,7 @@ interface ModalProps {
     type: "delete" | "update";
 }
 
+
 const Modal: React.FC<ModalProps> = ({ text, id, type }) => {
     const { hideModal, isVisible } = useModal();
     const navigate = useNavigate();
